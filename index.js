@@ -1,41 +1,32 @@
 (function() {
   'use strict';
+  const margin = {top: 20, right: 30, bottom: 40, left: 30},
+      width = 500 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+  const y = d3.scale.linear()
+          .range([width, 0]);
+  const x = d3.scale.ordinal()
+          .rangeRoundBands([0, height], 0.4)
+  const svg = d3.select(".barchart").append("svg")
+       .attr("width", width + margin.left + margin.right)
+       .attr("height", height + margin.top + margin.bottom)
+      .append("g");
+      // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
 
-const $xhr = $.ajax({
- method: 'GET',
- url: 'https://api.myjson.com/bins/pd5v',
- dataType: 'json'
-});
-$xhr.done((data) => {
- if ($xhr.status !== 200) {
-   return;
- }
- console.log(data.pieces.length)
- console.log(data.pieces)
-
- const margin = {top: 20, right: 30, bottom: 40, left: 30},
-       width = 500 - margin.left - margin.right,
-       height = 500 - margin.top - margin.bottom;
-
-const y = d3.scale.linear()
-      .range([width, 0])
-      .domain(d3.extent(data.pieces, function(d) {
+   const $xhr = $.ajax({
+      method: 'GET',
+      url: 'https://api.myjson.com/bins/pd5v',
+      dataType: 'json'
+   });
+  $xhr.done((data) => {
+    if ($xhr.status !== 200) {
+       return;
+    }
+    y.domain(d3.extent(data.pieces, function(d) {
         return d.sent_score;
       }))/*.nice()*/;
-
-
-const x = d3.scale.ordinal()
-         .rangeRoundBands([0, height], 0.4)
-           .domain(data.pieces.map(function(d, i) { return i; }));
-
-
-const svg = d3.select(".barchart").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g");
-        // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
-
-        svg.selectAll(".bar")
+     x.domain(data.pieces.map(function(d, i) { return i; }));
+     svg.selectAll(".bar")
            .data(data.pieces)
           .enter().append("rect")
             .attr("class", function(d) { return "bar--" + (d.sent_score < 0 ? "negative" : "positive"); })
@@ -49,9 +40,10 @@ const svg = d3.select(".barchart").append("svg")
                })
             .attr("x", function(d, i) { return  i * 15;  })
             .attr("height", function(d) {return Math.abs(y(d.sent_score) -y(0)); })
-            .attr("width", x.rangeBand());
-
-    });
+            .attr("width", x.rangeBand())
+            .on("click", function(d) {
+              console.log(d.sentences); })
+            });
 
 
 })();
