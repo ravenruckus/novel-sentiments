@@ -13,9 +13,13 @@
       .append("g");
       // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
   const displaySentences = function(sentences) {
-    const $dv = $('<div>');
+    const $dv = $('<div>').attr('id', 'sent');
     const $main = $('main');
     $dv.appendTo($main).text(sentences)
+  }
+  const removeSentences = function() {
+    const $getDv= $('#sent');
+    $getDv.remove();
   }
    const $xhr = $.ajax({
       method: 'GET',
@@ -47,6 +51,7 @@
             .attr("width", x.rangeBand())
             .on("click", function(d) {
               console.log(d.sentences);
+              removeSentences();
               displaySentences(d.sentences);
              })
             });
