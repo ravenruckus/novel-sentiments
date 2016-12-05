@@ -12,7 +12,11 @@
        .attr("height", height + margin.top + margin.bottom)
       .append("g");
       // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
-
+  const displaySentences = function(sentences) {
+    const $dv = $('<div>');
+    const $main = $('main');
+    $dv.appendTo($main).text(sentences)
+  }
    const $xhr = $.ajax({
       method: 'GET',
       url: 'https://api.myjson.com/bins/pd5v',
@@ -42,7 +46,9 @@
             .attr("height", function(d) {return Math.abs(y(d.sent_score) -y(0)); })
             .attr("width", x.rangeBand())
             .on("click", function(d) {
-              console.log(d.sentences); })
+              console.log(d.sentences);
+              displaySentences(d.sentences);
+             })
             });
 
 
