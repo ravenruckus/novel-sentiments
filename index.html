@@ -7,6 +7,8 @@
   <title>Novel Sentiments</title>
   <script defer src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script defer src="index.js"></script>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet">
@@ -15,7 +17,7 @@
 
 <body>
   <nav>
-    <div class="nav-wrapper blue darken-4">
+    <div class="nav-wrapper grey darken-1">
       <a href="#" class="brand-logo center">Explore Novels Fast</a>
       <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
@@ -25,8 +27,12 @@
     </div>
   </nav>
   <main>
+    <div class="row">
+      <div class="col m6 offset-m4 barchart">
+      </div>
+    </div>
   </main>
-  <footer class="page-footer blue darken-4">
+  <footer class="page-footer grey darken-1">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

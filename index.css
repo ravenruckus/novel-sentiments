@@ -7,3 +7,14 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.barchart {
+  margin-top: 45px;
+}
+.bar--positive {
+  fill: #ad1457;
+}
+
+.bar--negative {
+  fill: #0d47a1 ;
+}
