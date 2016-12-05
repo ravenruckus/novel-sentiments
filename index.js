@@ -15,7 +15,12 @@
   const displaySentences = function(sentences) {
     const $dv = $('<div>').attr('id', 'sent');
     const $main = $('main');
-    $dv.appendTo($main).text(sentences)
+    $dv.appendTo($main)
+    for(const line of sentences){
+      $('<p>').appendTo($dv).text(line);
+      console.log(line)
+    }
+
   }
   const removeSentences = function() {
     const $getDv= $('#sent');
@@ -50,7 +55,6 @@
             .attr("height", function(d) {return Math.abs(y(d.sent_score) -y(0)); })
             .attr("width", x.rangeBand())
             .on("click", function(d) {
-              console.log(d.sentences);
               removeSentences();
               displaySentences(d.sentences);
              })
