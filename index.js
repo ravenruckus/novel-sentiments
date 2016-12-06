@@ -6,7 +6,7 @@
         height = 700 - margin.top - margin.bottom;
   const svgHeight = 350;
   const svgWidth = 350;
-  const svg = d3.select('.barchart').append("svg")
+  const svg = d3.select('.barchart')
       //  .attr("width", width + margin.left + margin.right)
        .attr("width", svgWidth)
       //  .attr("height", height + margin.top + margin.bottom)
@@ -16,32 +16,32 @@
       .attr("transform", "translate(45, -350)");
 
 
-  const svg2 = d3.select('.barchart2').append("svg")
+  const svg2 = d3.select('.barchart2')
         .attr("width", svgWidth )
         .attr("height", svgHeight)
        .append("g")
-       .attr("transform", "translate(45, -300)");
+       .attr("transform", "translate(45, -300)")
 
 
- const svg3 = d3.select('.barchart3').append("svg")
+ const svg3 = d3.select('.barchart3')
        .attr("width",svgWidth)
        .attr("height", svgHeight)
       .append("g")
       .attr("transform", "translate(45, -300)");
 
-const svg4 = d3.select('.barchart4').append("svg")
+const svg4 = d3.select('.barchart4')
       .attr("width", svgWidth)
       .attr("height", svgHeight)
      .append("g")
      .attr("transform", "translate(45, -350)");
 
-const svg5 = d3.select('.barchart5').append("svg")
+const svg5 = d3.select('.barchart5')
      .attr("width", svgWidth)
      .attr("height", svgHeight)
     .append("g")
     .attr("transform", "translate(45, -350)");
 
-const svg6 = d3.select('.barchart6').append("svg")
+const svg6 = d3.select('.barchart6')
       .attr("width", svgWidth)
       .attr("height", svgHeight)
      .append("g")
