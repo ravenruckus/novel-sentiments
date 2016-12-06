@@ -1,5 +1,8 @@
 (function() {
   'use strict';
+  $(document).ready(function(){
+     $('.parallax').parallax();
+   });
 
   const margin = {top: 20, right: 30, bottom: 40, left: 30},
         width = 700 - margin.left - margin.right,
@@ -48,19 +51,25 @@ const svg6 = d3.select('.barchart6')
      .attr("transform", "translate(45, -350)");
 
 
+
+
   const y = d3.scale.linear()
           .range([width, 0]);
   const x = d3.scale.ordinal()
           .rangeRoundBands([0, height], 0.6)
 
 
-  const displaySentences = function(sentences) {
+  const displaySentences = function(sentences, i) {
     const $dv = $('<div>').attr('id', 'sent');
-    const $main = $('#text');
-    $dv.appendTo($main)
+    const $h5 = $('<h5>')
+    const $p = $('<p>').attr('class', 'section-number')
+    const $textContainer = $('#text');
+    $dv.appendTo($textContainer)
+    // $h5.appendTo($dv).text(Title)
+    $p.appendTo($dv).text('Section ' + (i + 1) + ':')
+
     for(const line of sentences){
       $('<p>').appendTo($dv).text(line);
-      console.log(line)
     }
 
   }
@@ -86,6 +95,11 @@ const svg6 = d3.select('.barchart6')
     // y.domain(d3.extent(data.pieces, function(d) {
     //     return d.sent_score;
     //   }))/*.nice()*/;
+    const $h5 = $('<h5>')
+    const $textBar = $('#text')
+    const Title = data.Title;
+    // const textTitle = $h5.appendTo($textBar).text(data.Title)
+    // h5.append(data.Title)
      y.domain([0, .6])
      x.domain(data.pieces.map(function(d, i) { return i; }));
      svg.selectAll(".bar")
@@ -103,10 +117,15 @@ const svg6 = d3.select('.barchart6')
             .attr("x", function(d, i) { return  i * 15;  })
             .attr("height", function(d) {return Math.abs(y(d.sent_score) -y(0)); })
             .attr("width", x.rangeBand())
-            .on("click", function(d) {
-              removeSentences();
-              displaySentences(d.sentences);
+            .on("click", function(d, i) {
+              // removeSentences();
+              $('#text').empty()
+                // $h5.appendTo($textBar).text(data.Title).remove()
+              console.log(Title)
+              $h5.appendTo($textBar).text(data.Title)
+              displaySentences(d.sentences, i);
              })
+
 
         //   const $h2 = $('<h2>');
         // svg.append.$h2.text(function(d) { return d.title;})
