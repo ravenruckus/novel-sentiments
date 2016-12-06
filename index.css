@@ -12,9 +12,10 @@ main {
   margin-top: 45px;
 }
 .bar--positive {
-  fill: #ad1457;
+  fill: #0d47a1 ;
 }
 
 .bar--negative {
-  fill: #0d47a1 ;
+  fill: #ad1457;
+
 }

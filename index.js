@@ -2,29 +2,36 @@
   'use strict';
 
   const margin = {top: 20, right: 30, bottom: 40, left: 30},
-        width = 500 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        width = 700 - margin.left - margin.right,
+        height = 700 - margin.top - margin.bottom;
   const svg = d3.select('.barchart').append("svg")
        .attr("width", width + margin.left + margin.right)
        .attr("height", height + margin.top + margin.bottom)
-      .append("g");
+      .append("g")
+      // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
+      .attr("transform", "translate(45, -350)");
+
 
   const svg2 = d3.select('.barchart2').append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-       .append("g");
+       .append("g")
+       .attr("transform", "translate(45, -300)");
+
 
  const svg3 = d3.select('.barchart3').append("svg")
        .attr("width", width + margin.left + margin.right)
        .attr("height", height + margin.top + margin.bottom)
-      .append("g");
+      .append("g")
+      .attr("transform", "translate(45, -300)");
+
 
   const y = d3.scale.linear()
           .range([width, 0]);
   const x = d3.scale.ordinal()
-          .rangeRoundBands([0, height], 0.4)
+          .rangeRoundBands([0, height], 0.6)
 
-      // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
+
   const displaySentences = function(sentences) {
     const $dv = $('<div>').attr('id', 'sent');
     const $main = $('main');
@@ -55,9 +62,10 @@
        return;
     }
 
-    y.domain(d3.extent(data.pieces, function(d) {
-        return d.sent_score;
-      }))/*.nice()*/;
+    // y.domain(d3.extent(data.pieces, function(d) {
+    //     return d.sent_score;
+    //   }))/*.nice()*/;
+     y.domain([0, .6])
      x.domain(data.pieces.map(function(d, i) { return i; }));
      svg.selectAll(".bar")
            .data(data.pieces)
@@ -82,6 +90,6 @@
           }
     barChart('https://api.myjson.com/bins/pd5v', svg);
     barChart('https://api.myjson.com/bins/3edlx', svg2);
-    barChart('https://api.myjson.com/bins/3147t', svg3);
+    barChart('https://api.myjson.com/bins/3147t', svg3);//frankenstein
 
 })();
