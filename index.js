@@ -1,16 +1,29 @@
 (function() {
   'use strict';
+
   const margin = {top: 20, right: 30, bottom: 40, left: 30},
-      width = 500 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+        width = 500 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+  const svg = d3.select('.barchart').append("svg")
+       .attr("width", width + margin.left + margin.right)
+       .attr("height", height + margin.top + margin.bottom)
+      .append("g");
+
+  const svg2 = d3.select('.barchart2').append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+       .append("g");
+
+ const svg3 = d3.select('.barchart3').append("svg")
+       .attr("width", width + margin.left + margin.right)
+       .attr("height", height + margin.top + margin.bottom)
+      .append("g");
+
   const y = d3.scale.linear()
           .range([width, 0]);
   const x = d3.scale.ordinal()
           .rangeRoundBands([0, height], 0.4)
-  const svg = d3.select(".barchart").append("svg")
-       .attr("width", width + margin.left + margin.right)
-       .attr("height", height + margin.top + margin.bottom)
-      .append("g");
+
       // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
   const displaySentences = function(sentences) {
     const $dv = $('<div>').attr('id', 'sent');
@@ -26,15 +39,22 @@
     const $getDv= $('#sent');
     $getDv.remove();
   }
+
+
+  const barChart = function(address, svg) {
+
+  // const barChart = function(urlAddress) {}
    const $xhr = $.ajax({
       method: 'GET',
-      url: 'https://api.myjson.com/bins/pd5v',
+      url: address,
+      // url: 'https://api.myjson.com/bins/pd5v',
       dataType: 'json'
    });
   $xhr.done((data) => {
     if ($xhr.status !== 200) {
        return;
     }
+
     y.domain(d3.extent(data.pieces, function(d) {
         return d.sent_score;
       }))/*.nice()*/;
@@ -59,6 +79,9 @@
               displaySentences(d.sentences);
              })
             });
-
+          }
+    barChart('https://api.myjson.com/bins/pd5v', svg);
+    barChart('https://api.myjson.com/bins/3edlx', svg2);
+    barChart('https://api.myjson.com/bins/3147t', svg3);
 
 })();
