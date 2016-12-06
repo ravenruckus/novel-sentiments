@@ -56,7 +56,7 @@ const svg6 = d3.select('.barchart6').append("svg")
 
   const displaySentences = function(sentences) {
     const $dv = $('<div>').attr('id', 'sent');
-    const $main = $('main');
+    const $main = $('#text');
     $dv.appendTo($main)
     for(const line of sentences){
       $('<p>').appendTo($dv).text(line);
@@ -76,7 +76,6 @@ const svg6 = d3.select('.barchart6').append("svg")
    const $xhr = $.ajax({
       method: 'GET',
       url: address,
-      // url: 'https://api.myjson.com/bins/pd5v',
       dataType: 'json'
    });
   $xhr.done((data) => {
