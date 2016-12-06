@@ -23,14 +23,14 @@
         .attr("width", svgWidth )
         .attr("height", svgHeight)
        .append("g")
-       .attr("transform", "translate(45, -300)")
+       .attr("transform", "translate(45, -350)")
 
 
  const svg3 = d3.select('.barchart3')
        .attr("width",svgWidth)
        .attr("height", svgHeight)
       .append("g")
-      .attr("transform", "translate(45, -300)");
+      .attr("transform", "translate(45, -350)");
 
 const svg4 = d3.select('.barchart4')
       .attr("width", svgWidth)
@@ -74,7 +74,6 @@ const svg6 = d3.select('.barchart6')
     for(const line of sentences){
       $('<p>').appendTo($dv).text(line);
     }
-
   }
   const removeSentences = function() {
     const $getDv= $('#sent');
@@ -133,7 +132,7 @@ const svg6 = d3.select('.barchart6')
                 // $h5.appendTo($textBar).text(data.Title).remove()
               console.log(Title)
               $h5.appendTo($textBar).text(data.Title)
-              displaySentences(d.sentences, i, $textContainer);
+              displaySentences(d.sentences, i, $textContainer)
              })
 
 

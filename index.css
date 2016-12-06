@@ -6,17 +6,23 @@ body {
 
 main {
   flex: 1 0 auto;
-  /*background-image: url('library.jpeg');
+  /*background-image: url('black_writing2.png');
   background-size: cover;
   height: 1000px*/
 }
 .parallax-container {
   height:600px;
 }
-
-.barchart, .barchart4 {
-  margin-top: 45px;
+.charts {
+  margin-top: 35px;
 }
+.alice {
+  /*background-image: url('wizardoz.jpeg')*/
+}
+
+/*.barchart, .barchart4 {
+  margin-top: 45px;
+}*/
 .barchart2, .barchart3, .barchart5, .barchart6 {
   margin-bottom: 45px;
 }
