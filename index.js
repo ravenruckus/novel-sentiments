@@ -58,12 +58,15 @@ const svg6 = d3.select('.barchart6')
   const x = d3.scale.ordinal()
           .rangeRoundBands([0, height], 0.6)
 
+  const $textContainer = $('#text');
+  const $textContainer2 = $('#text2');
+  const $textContainer3 = $('#text3');
 
-  const displaySentences = function(sentences, i) {
+
+  const displaySentences = function(sentences, i, $textContainer) {
     const $dv = $('<div>').attr('id', 'sent');
     const $h5 = $('<h5>')
     const $p = $('<p>').attr('class', 'section-number')
-    const $textContainer = $('#text');
     $dv.appendTo($textContainer)
     // $h5.appendTo($dv).text(Title)
     $p.appendTo($dv).text('Section ' + (i + 1) + ':')
@@ -78,8 +81,16 @@ const svg6 = d3.select('.barchart6')
     $getDv.remove();
   }
 
+  const $textBar = $('#text');
+  const $textBar2 = $('#text2');
+  const $textBar3 = $('#text3');
 
-  const barChart = function(address, svg) {
+
+
+
+
+
+  const barChart = function(address, svg, $textContainer, $textBar) {
 
   // const barChart = function(urlAddress) {}
    const $xhr = $.ajax({
@@ -96,7 +107,6 @@ const svg6 = d3.select('.barchart6')
     //     return d.sent_score;
     //   }))/*.nice()*/;
     const $h5 = $('<h5>')
-    const $textBar = $('#text')
     const Title = data.Title;
     // const textTitle = $h5.appendTo($textBar).text(data.Title)
     // h5.append(data.Title)
@@ -119,11 +129,11 @@ const svg6 = d3.select('.barchart6')
             .attr("width", x.rangeBand())
             .on("click", function(d, i) {
               // removeSentences();
-              $('#text').empty()
+              $textContainer.empty()
                 // $h5.appendTo($textBar).text(data.Title).remove()
               console.log(Title)
               $h5.appendTo($textBar).text(data.Title)
-              displaySentences(d.sentences, i);
+              displaySentences(d.sentences, i, $textContainer);
              })
 
 
@@ -131,10 +141,10 @@ const svg6 = d3.select('.barchart6')
         // svg.append.$h2.text(function(d) { return d.title;})
             });
           }
-    barChart('https://api.myjson.com/bins/pd5v', svg);
-    barChart('https://api.myjson.com/bins/3edlx', svg2);
-    barChart('https://api.myjson.com/bins/3147t', svg3);//frankenstein
-    barChart('https://api.myjson.com/bins/26x0x', svg4);//jungle book
-    barChart('https://api.myjson.com/bins/2b7ch', svg5);//dracula
-    barChart('https://api.myjson.com/bins/1u9s1', svg6);//Pride and Prejudice
+    barChart('https://api.myjson.com/bins/pd5v', svg, $textContainer,$textBar);
+    barChart('https://api.myjson.com/bins/3edlx', svg2, $textContainer,$textBar);
+    barChart('https://api.myjson.com/bins/3147t', svg3, $textContainer2, $textBar2);//frankenstein
+    barChart('https://api.myjson.com/bins/26x0x', svg4, $textContainer2,$textBar2);//jungle book
+    barChart('https://api.myjson.com/bins/2b7ch', svg5, $textContainer3,$textBar3);//dracula
+    barChart('https://api.myjson.com/bins/1u9s1', svg6, $textContainer3,$textBar3);//Pride and Prejudice
 })();
