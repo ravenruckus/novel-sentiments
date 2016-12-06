@@ -4,26 +4,48 @@
   const margin = {top: 20, right: 30, bottom: 40, left: 30},
         width = 700 - margin.left - margin.right,
         height = 700 - margin.top - margin.bottom;
+  const svgHeight = 350;
+  const svgWidth = 350;
   const svg = d3.select('.barchart').append("svg")
-       .attr("width", width + margin.left + margin.right)
-       .attr("height", height + margin.top + margin.bottom)
+      //  .attr("width", width + margin.left + margin.right)
+       .attr("width", svgWidth)
+      //  .attr("height", height + margin.top + margin.bottom)
+       .attr("height", svgHeight)
       .append("g")
       // .attr("transform", "translate(" + margin.top + "," + margin.left + ")");
       .attr("transform", "translate(45, -350)");
 
 
   const svg2 = d3.select('.barchart2').append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width", svgWidth )
+        .attr("height", svgHeight)
        .append("g")
        .attr("transform", "translate(45, -300)");
 
 
  const svg3 = d3.select('.barchart3').append("svg")
-       .attr("width", width + margin.left + margin.right)
-       .attr("height", height + margin.top + margin.bottom)
+       .attr("width",svgWidth)
+       .attr("height", svgHeight)
       .append("g")
       .attr("transform", "translate(45, -300)");
+
+const svg4 = d3.select('.barchart4').append("svg")
+      .attr("width", svgWidth)
+      .attr("height", svgHeight)
+     .append("g")
+     .attr("transform", "translate(45, -350)");
+
+const svg5 = d3.select('.barchart5').append("svg")
+     .attr("width", svgWidth)
+     .attr("height", svgHeight)
+    .append("g")
+    .attr("transform", "translate(45, -350)");
+
+const svg6 = d3.select('.barchart6').append("svg")
+      .attr("width", svgWidth)
+      .attr("height", svgHeight)
+     .append("g")
+     .attr("transform", "translate(45, -350)");
 
 
   const y = d3.scale.linear()
@@ -86,10 +108,15 @@
               removeSentences();
               displaySentences(d.sentences);
              })
+
+        //   const $h2 = $('<h2>');
+        // svg.append.$h2.text(function(d) { return d.title;})
             });
           }
     barChart('https://api.myjson.com/bins/pd5v', svg);
     barChart('https://api.myjson.com/bins/3edlx', svg2);
     barChart('https://api.myjson.com/bins/3147t', svg3);//frankenstein
-
+    barChart('https://api.myjson.com/bins/26x0x', svg4);//jungle book
+    barChart('https://api.myjson.com/bins/2b7ch', svg5);//dracula
+    barChart('https://api.myjson.com/bins/1u9s1', svg6);//Pride and Prejudice
 })();
