@@ -7,8 +7,8 @@ body {
 
 main {
   flex: 1 0 auto;
-  background-image: url('images/blackboard.png');
-  background-size: cover;
+  background-image: url('images/library5.png');
+  /*background-size: cover;*/
 }
 .header {
   background-image: url('images/raven2.png');
@@ -17,18 +17,34 @@ main {
   height: 150px;
 
 }
+.blackboard {
+  background-image: url('images/blackboard.png');
+  background-size: cover;
+  border-bottom: 20px #2196f3 solid;
+
+}
+.top-section {
+  margin-bottom: 150px;
+}
+.outer-wrapper {
+  /*background-color: rgba(0, 0, 0, .5);*/
+}
 .parallax-container {
   height:600px;
 }
 .charts {
   margin-top: 35px;
 }
+h5 {
+  color: rgba(189, 193, 194, 0.73);
+}
 .wrapper {
-  /*background-color: rgba(0,0,0, .3);*/
+  background-color: rgba(28,27,32, .8);
 }
 .inner-wrapper {
   width: 95%;
   margin: auto;
+
 }
 
 .alice {
@@ -44,14 +60,20 @@ main {
 .barcharts {
   background-color: rgba(255, 255, 255, 0.5);
 }
-h3, h1 {
+h1 {
   font-family: 'Shadows Into Light', cursive;
   color: #fff;
+  color: #2196f3;
+}
+h4 {
+  color: #fff;
+
 }
 
 .bar--positive {
   fill: #0d47a1 ;
   fill: #fff;
+  fill: #2196f3;
 }
 
 .bar--negative {
@@ -65,7 +87,7 @@ h3, h1 {
   background-color: #222;
   border-radius: 4px;
   margin-top: 75px;
-  box-shadow: 5px 5px 5px rgba(161, 159, 164, 0.70);
+  box-shadow: 5px 5px 5px rgba(161, 159, 164, 0.5);
 }
 ::-webkit-scrollbar
 {

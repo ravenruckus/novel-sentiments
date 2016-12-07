@@ -63,13 +63,13 @@ const svg6 = d3.select('.barchart6')
   const $textContainer3 = $('#text3');
 
 
-  const displaySentences = function(sentences, i, $textContainer) {
+  const displaySentences = function(sentences, i, $textContainer, sentScore) {
     const $dv = $('<div>').attr('id', 'sent');
     const $h5 = $('<h5>')
     const $p = $('<p>').attr('class', 'section-number')
     $dv.appendTo($textContainer)
     // $h5.appendTo($dv).text(Title)
-    $p.appendTo($dv).text('Section ' + (i + 1) + ':')
+    $p.appendTo($dv).text('Section ' + (i + 1) + sentScore + ':')
 
     for(const line of sentences){
       $('<p>').appendTo($dv).text(line);
@@ -132,7 +132,7 @@ const svg6 = d3.select('.barchart6')
                 // $h5.appendTo($textBar).text(data.Title).remove()
               console.log(Title)
               $h5.appendTo($textBar).text(data.Title)
-              displaySentences(d.sentences, i, $textContainer)
+              displaySentences(d.sentences, i, $textContainer, d.sent_score)
              })
 
 
