@@ -7,7 +7,7 @@ body {
 
 main {
   flex: 1 0 auto;
-  background-image: url('images/library5.png');
+  background-image: url('images/library.png');
   /*background-size: cover;*/
 }
 .header {

@@ -67,9 +67,11 @@ const svg6 = d3.select('.barchart6')
     const $dv = $('<div>').attr('id', 'sent');
     const $h5 = $('<h5>')
     const $p = $('<p>').attr('class', 'section-number')
+    const $p2 = $('<p>').attr('class', 'mean-sentiment')
     $dv.appendTo($textContainer)
     // $h5.appendTo($dv).text(Title)
-    $p.appendTo($dv).text('Section ' + (i + 1) + sentScore + ':')
+    $p.appendTo($dv).text('Section ' + (i + 1) + ': ')
+    $p2.appendTo($dv).text('Mean Sentiment Score: ' + sentScore.toFixed(2))
 
     for(const line of sentences){
       $('<p>').appendTo($dv).text(line);
