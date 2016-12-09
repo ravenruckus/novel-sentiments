@@ -136,25 +136,6 @@ const svg6 = d3.select('.barchart6')
               $h5.appendTo($textBar).text(data.Title)
               displaySentences(d.sentences, i, $textContainer, d.sent_score)
              })
-            //  .on('mouseover', tip.show)
-            //  .on('mouseout', tip.hide);
-            //  .on("mouseover", function(d) {
-            //    d3.select(this.parentNode).select("rect").style("fill", "orange");
-            //  }).on("mouseout", function(d) {
-            //    d3.select(this.parentNode).select("rect").style("fill", "blue")
-            //  })
-            // .on('mouseover', function(d,i) {
-            //   d3.select(this).transition()
-            //   .ease('cubic-out')
-            //   .duration('200')
-            //   .attr('fill', '#F00');
-            //   })
-            // .on('mouseout', function(d,i) {
-            //   d3.select(this).transition()
-            //   .ease('cubic-out')
-            //   .duration('200')
-            //   .attr('fill', '#333');
-            //   });
             .on('mouseover', function(d) {
               d3.select(this).classed('hovered', true)
             })

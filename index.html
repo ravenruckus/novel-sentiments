@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,122 +16,101 @@
 </head>
 
 <body>
-  <main>
-    <div class="wrapper">
-      <div class="blackboard">
-      <div class='header'>
-      </div>
-    <div class="row top-section container">
-      <h1>Explore Novels Fast</h1>
-      <div class="col m12">
-        <p> Knowing when to fluctuate the emotional tone of your novel can be a key factor in keeping your reader turning the page. One of the best ways to learn how to do this is by  studying a variety of novels.  How do you find time to not just read novels but study them when you are spending your free-time writing? </p>
+  <div class="outer-wrapper">
+  <div class="wrapper">
 
-        <p>Easily explore the negative dips and positive climbs of six classical novels, without having to read every one from start to finish.  Each sentence in the novel has been given a score between -1 and 1. Negative one being the most negative and 1 being the most positive. The novels were then borken up into twenty pieces and the mean score of the sentence sentiment scores calculated so that you can see the pattern each novel makes over the course of its story. Click one of the bars in the charts below to read the mean sentiment score and the sentences that comprise that section of the novel.</p>
-        <h5>How is the score calculated?</h5>
-        <p>Sentiment analysis was used to determine the tone variations of the novels. Sentiment analysis, uses statistical models,  to try and gage the negative and posistive blah blah behind a series of words, often used to gain an understanding of attitudes, opinions, and emotions expressed online. The python library <a href="https://textblob.readthedocs.io/en/dev" target="_blank"> TextBlob</a> was used in this project.  </p>
-              </div>
+    <div class="blackboard">
+      <div class='banner'>
+      </div>
+      <div class="row top-section container">
+       <h1>Explore Novels Fast</h1>
+       <div class="col m12">
+          <p> Knowing when to fluctuate the emotional tone of your novel can be a key factor in keeping your reader turning the page. One of the best ways to learn how to do this is by  studying a variety of novels.  How do you find time to not just read novels but study them when you are spending your free-time writing? </p>
+
+          <p>Easily explore the negative dips and positive climbs of six classical novels, without having to read every one from start to finish.  Each sentence in the novel has been given a score between -1 and 1. Negative one being the most negative and 1 being the most positive. The novels were then borken up into twenty pieces and the mean score of the sentence sentiment scores calculated so that you can see the pattern each novel makes over the course of its story. Click one of the bars in the charts below to read the mean sentiment score and the sentences that comprise that section of the novel.</p>
+          <h5>How is the score calculated?</h5>
+          <p>Sentiment analysis was used to determine the tone variations of the novels. Sentiment analysis, uses statistical models,  to try and gage the negative and posistive blah blah behind a series of words, often used to gain an understanding of attitudes, opinions, and emotions expressed online. The python library <a href="https://textblob.readthedocs.io/en/dev" target="_blank"> TextBlob</a> was used in this project.</p>
+      </div>
     </div>
   </div><!--blackboard-->
-  <div class="outer-wrapper">
-  <div class="inner-wrapper">
+
+
+  <main>
+
     <div class="row">
-      <!-- <div class="parallax"><img src="library.png"></div> -->
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Alice in Wonderland</h4>
         <svg class="barchart"></svg>
       </div>
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Wizard of Oz</h4>
         <svg class="barchart2"></svg>
       </div>
       <div class="scrolling">
-        <div class="col m4" id="text"><h5 class="center-align">Click graph bar to read a section.</h5></div>
+        <div class="col s12 m12 l4" id="text"><h5 class="center-align">Click graph bar to read a section.</h5></div>
       </div>
     </div><!--barchart row 1-->
 
 
     <div class="row">
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Frankenstein</h4>
         <svg class="barchart3"></svg>
       </div>
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Jungle Book</h4>
         <svg class="barchart4"></svg>
       </div>
       <div class="scrolling">
-        <div class="col m4" id="text2"><h5 class="center-align">Click graph bar to read a section.</h5></div>
+        <div class="col s12 m12 l4" id="text2"><h5 class="center-align">Click graph bar to read a section.</h5></div>
       </div>
-
     </div><!--bar chart row 2-->
+
+
     <div class="row">
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Dracula</h4>
         <svg class="barchart5"></svg>
       </div>
-      <div class="col m4 charts">
+      <div class="col s12 m12 l4 charts">
         <h4 class="center-align">Pride and Prejudice</h4>
         <svg class="barchart6"></svg>
       </div>
       <div class="scrolling">
-        <div class="col m4" id="text3"><h5 class="center-align">Click graph bar to read a section.</h5></div>
+        <div class="col s12 m12 l4" id="text3"><h5 class="center-align">Click graph bar to read a section.</h5></div>
       </div>
-    </div>
-  </div><!--inner-wrapper-->
-</div><!--outer-wrapper-->
+    </div><!--barchart row 3-->
 
-    <!--bar chart row 3-->
-    <!-- <div class="col m4" id="text">
-    </div>-->
+  </main>
+
   <footer>
+
     <div class="row">
-    <div class="col m8">
-      <div class="footer-copyright">
-      © 2014 Copyright Text
-    </div>
-  </div>
+
+     <div class="col m8">
+       <div class="footer-copyright">
+        © 2014 Copyright Text
+       </div>
+     </div>
 
       <!-- <div class="col l4 offset-l2 s12"> -->
       <div class="col m4">
-      <ul>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-      </ul>
-    </div>
-      <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
- </footer>
- <div class="post-footer"></div>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+     </div>
 
-</div>
-  </main>
-  <!-- <footer class="page-footer blue darken-2">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2014 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
-    </div>
-  </footer> -->
+
+  </footer>
+  <div class="post-footer"></div>
+
+</div><!--wrapper-->
+</div><!--outer-wrapper-->
+
+
 </body>
 </html>
