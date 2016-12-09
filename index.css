@@ -156,5 +156,7 @@ footer {
 }
 .footer-copyright {
   padding-top: 50px;
-  margin-left: 25%;
+}
+.links{
+  padding-top: 10px;
 }
