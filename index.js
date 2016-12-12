@@ -120,7 +120,7 @@
             });
     });
   };
-  barChart('https://api.myjson.com/bins/pd5v', svg1, $textContainer, $textBar);
+  barChart('https://api.myjson.com/bins/1b5wb1', svg1, $textContainer, $textBar);
   barChart('https://api.myjson.com/bins/3edlx', svg2, $textContainer, $textBar);
   barChart('https://api.myjson.com/bins/3147t', svg3, $textContainer2, $textBar2); // frankenstein
   barChart('https://api.myjson.com/bins/26x0x', svg4, $textContainer2, $textBar2); // jungle book
