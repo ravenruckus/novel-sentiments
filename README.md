@@ -9,6 +9,7 @@ The user is able to click on the bars in the charts to read the sentences that c
 
 ## Features
 
+[Video of Features](https://vimeo.com/195994336 "Feature Video")
 
 
 
@@ -21,4 +22,4 @@ The user is able to click on the bars in the charts to read the sentences that c
 * TextBlob
 * myjson.com
 
-Python was used to pull the text off of the [Gutenberg Project]](https://www.gutenberg.org/browse/scores/top "Gutenberg.org") , first provider of free electronic books. [TextBlob](https://textblob.readthedocs.io/en/dev/ "TextBlob") tokenizes the raw text into sentences and then runs a sentiment analysis on each sentence giving them a score between -1 and 1. One being the most positive and negative one being the most negative language. Json files were generated with python and then loaded up to myjson.com. Ajax calls were made to myjson.com allowing D3 to display the novels in bar chart form. jQuery and D3 allow interactivity of the bar charts. Materialize framework was used for the HTML and CSS, with some added customization. Adobe stock photos were used for the background images. 
+Python was used to pull the text off of the [Gutenberg Project](https://www.gutenberg.org/browse/scores/top "Gutenberg.org") , first provider of free electronic books. [TextBlob](https://textblob.readthedocs.io/en/dev/ "TextBlob") tokenizes the raw text into sentences and then runs a sentiment analysis on each sentence giving them a score between -1 and 1. One being the most positive and negative one being the most negative language. Json files were generated with python and then loaded up to myjson.com. Ajax calls were made to myjson.com allowing D3 to display the novels in bar chart form. jQuery and D3 allow interactivity of the bar charts. Materialize framework was used for the HTML and CSS, with some added customization. Adobe stock photos were used for the background images.
