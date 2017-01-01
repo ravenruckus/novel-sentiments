@@ -1,5 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
+
 """
 Created on Sun Dec  4 16:08:05 2016
 
@@ -21,7 +20,7 @@ def abstract(novelNum):
     novel_sentences = novel.sentences
     return novel_sentences;
 
-    
+
 #puts sentences into dataframe
 def dataFrame(novel_sentences):
     arrSentences = [];
